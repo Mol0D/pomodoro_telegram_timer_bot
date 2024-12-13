@@ -11,11 +11,10 @@ load_dotenv()
 BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 
 async def start(update: Update, context: CallbackContext) -> None:
-	context.user_data['DEFAULT_POMODORO'] = 25
-	context.user_data['DEFAULT_BREAK'] = 5
+    context.user_data['DEFAULT_POMODORO'] = 25
+    context.user_data['DEFAULT_BREAK'] = 5
 
-	await update.message.reply_text("Hello! I'm your new bot. How can I assist you?")
-	await update.message.reply_text(context.user_data.get('DEFAULT_POMODORO'))
+    await update.message.reply_text("Hello! I'm your new bot. How can I assist you?")
 
 def main():
     # Create the Application and pass it your bot's token.
